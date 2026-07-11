@@ -10,7 +10,7 @@ import org.selkie.kol.helpers.WeaponModificationHelpers.setProjectileSpec
 
 class TamariskHmod: BaseHullMod() {
     companion object {
-        const val PROJECTILE_SPEED_MULT = 1.25f
+        const val PROJECTILE_SPEED_MULT = 1.5f
     }
 
     override fun applyEffectsAfterShipCreation(ship: ShipAPI?, id: String?) {
@@ -21,7 +21,6 @@ class TamariskHmod: BaseHullMod() {
         for (weapon in ship.allWeapons) {
             val slot = weapon.slot
             if (slot.weaponType != WeaponAPI.WeaponType.BALLISTIC) continue
-            if (slot.slotSize != WeaponAPI.WeaponSize.LARGE) continue
 
             val spec = weapon.getClonedProjectileSpec() ?: continue
             spec.setMoveSpeed(spec.getMoveSpeed(null, weapon) * PROJECTILE_SPEED_MULT)

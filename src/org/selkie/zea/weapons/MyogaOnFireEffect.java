@@ -2,13 +2,18 @@ package org.selkie.zea.weapons;
 
 import java.awt.Color;
 
+import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import com.fs.starfarer.api.combat.listeners.DamageDealtModifier;
+import com.fs.starfarer.api.impl.combat.NegativeExplosionVisual;
+import com.fs.starfarer.api.impl.combat.RiftCascadeMineExplosion;
 import com.fs.starfarer.api.impl.combat.threat.VoidblasterEffect;
+import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 
-public class MyogaOnFireEffect implements OnFireEffectPlugin {
+public class MyogaOnFireEffect implements OnFireEffectPlugin, OnHitEffectPlugin {
     
     private static final Color FLASH_COLOR = new Color(160,40,225,100);
 
@@ -52,4 +57,40 @@ public class MyogaOnFireEffect implements OnFireEffectPlugin {
         }
     }
 
-  }
+    @Override
+    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
+        if (!(target instanceof ShipAPI ship)) {
+            return;
+        }
+
+        if (!ship.isFighter()) {
+            return;
+        }
+
+        DamagingExplosionSpec spec = new DamagingExplosionSpec(
+                0.1f,
+                200f,
+                60f,
+                350f,
+                50f,
+                CollisionClass.PROJECTILE_NO_FF,
+                CollisionClass.PROJECTILE_NO_FF,
+                0f,
+                0f,
+                1f,
+                0,
+                new Color(0, 0, 0, 0),
+                new Color(0, 0, 0, 0)
+        );
+        DamagingProjectileAPI proj = Global.getCombatEngine().spawnDamagingExplosion(
+                spec,
+                projectile.getSource(),
+                point
+        );
+        NegativeExplosionVisual.NEParams p = RiftCascadeMineExplosion.createStandardRiftParams(FLASH_COLOR, 20f);
+        RiftCascadeMineExplosion.spawnStandardRift(
+            proj,
+            p
+        );
+    }
+}
