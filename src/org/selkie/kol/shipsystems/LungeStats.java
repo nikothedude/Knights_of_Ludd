@@ -2,13 +2,11 @@ package org.selkie.kol.shipsystems;
 
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.combat.CombatEngineAPI;
-import com.fs.starfarer.api.combat.CombatEngineLayers;
-import com.fs.starfarer.api.combat.MutableShipStatsAPI;
-import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.util.IntervalUtil;
+import com.fs.starfarer.api.util.Misc;
 import org.lazywizard.lazylib.CollisionUtils;
 import org.lazywizard.lazylib.FastTrig;
 import org.lazywizard.lazylib.MathUtils;
@@ -19,6 +17,7 @@ import org.selkie.zea.fx.FakeSmokePlugin;
 import java.awt.*;
 
 import static com.fs.starfarer.api.util.Misc.ZERO;
+import org.lazywizard.lazylib.VectorUtils;
 
 
 public class LungeStats extends BaseShipSystemScript {
@@ -30,6 +29,12 @@ public class LungeStats extends BaseShipSystemScript {
     private static final Color SMOKE_COLOR = new Color(199, 188, 111, 175);
     private final Color color = new Color(100,255,100,255);
     public static final float MAX_TIME_MULT = 2f;
+
+    public static final float ACCEL_INCR = 5000f;
+    public static final float SPEED_INCR = 600f;
+
+    public static final float ACCEL_INCR_REVERSING = 70f;
+    public static final float SPEED_INCR_REVERSING = 40f;
 
     private float offsetX;
     private float offsetY;
@@ -71,19 +76,23 @@ public class LungeStats extends BaseShipSystemScript {
         stats.getTurnAcceleration().modifyMult(id, 10f);
 
         if (state == State.IN) {
-            if (ship.getEngineController().isAcceleratingBackwards() || ship.getEngineController().isDecelerating()) {
+            if (ship.getCustomData().get("KOL_test") == null) {
+                ship.getVelocity().set(0f, 0f);
+                ship.setCustomData("KOL_test", true);
+            }
+
+            if (isReversing(ship)) {
                 stats.getAcceleration().unmodify(id);
-                stats.getAcceleration().modifyFlat(id, 70f);
+                stats.getAcceleration().modifyFlat(id, ACCEL_INCR_REVERSING);
                 stats.getMaxSpeed().unmodify(id);
-                stats.getMaxSpeed().modifyFlat(id, 40f);
+                stats.getMaxSpeed().modifyFlat(id, SPEED_INCR_REVERSING);
             } else {
                 stats.getAcceleration().unmodify(id);
-                stats.getAcceleration().modifyFlat(id, 5000f);
+                stats.getAcceleration().modifyFlat(id, ACCEL_INCR);
                 stats.getMaxSpeed().unmodify(id);
-                stats.getMaxSpeed().modifyFlat(id, 600f);
+                stats.getMaxSpeed().modifyFlat(id, SPEED_INCR);
             }
             ship.getMutableStats().getDeceleration().modifyFlat(id, 1000f);
-            stats.getMaxSpeed().modifyFlat(id, 600f);
             intervalSmoke.advance(elapsed);
             if (intervalSmoke.intervalElapsed()) {
                 for (int i = 0; i < 6; i++) {
@@ -111,6 +120,7 @@ public class LungeStats extends BaseShipSystemScript {
             decel = false;
 
         } else if (state == State.ACTIVE) {
+            ship.setCustomData("KOL_test", null);
 
             interval.advance(elapsed);
 
@@ -124,6 +134,13 @@ public class LungeStats extends BaseShipSystemScript {
             //ship.setJitter(ship,FLICKER_COLOR,0.7f,10,25f,50f);
 
             stats.getAcceleration().unmodify(id);
+            if (isReversing(ship)) {
+                stats.getMaxSpeed().unmodify(id);
+                stats.getMaxSpeed().modifyFlat(id, SPEED_INCR_REVERSING);
+            } else {
+                stats.getMaxSpeed().unmodify(id);
+                stats.getMaxSpeed().modifyFlat(id, SPEED_INCR);
+            }
 
             /*
             float speed = ship.getVelocity().length();
@@ -212,29 +229,18 @@ public class LungeStats extends BaseShipSystemScript {
 
     }
 
-    public StatusData getStatusData(int index, State state, float effectLevel) {
-        return null;
-    }
+    public boolean isReversing(ShipAPI ship) {
+        return ship.getEngineController().isAcceleratingBackwards() || ship.getEngineController().isDecelerating();
 
+        /*float facing = Misc.normalizeAngle(90f - ship.getFacing());
+        Vector2f vel = ship.getVelocity();
+        float velAngle = VectorUtils.getFacing(vel) - 90f;
+        float adjustedVelAngle = Misc.normalizeAngle(velAngle + facing);
+        if (adjustedVelAngle < 240f && adjustedVelAngle > 120f) {
+            return true;
+        }
 
-    public float getActiveOverride(ShipAPI ship) {
-        return -1;
-    }
-
-    public float getInOverride(ShipAPI ship) {
-        return -1;
-    }
-
-    public float getOutOverride(ShipAPI ship) {
-        return -1;
-    }
-
-    public float getRegenOverride(ShipAPI ship) {
-        return -1;
-    }
-
-    public int getUsesOverride(ShipAPI ship) {
-        return -1;
+        return false;*/
     }
 }
 

@@ -3,10 +3,15 @@
 	"specClass":"projectile",
 
 	"onFireEffect":"org.selkie.zea.weapons.MyogaOnFireEffect",
+	"onHitEffect":"org.selkie.zea.weapons.MyogaOnFireEffect",
 
 	"spawnType":"BALLISTIC",
 	"collisionClass":"PROJECTILE_FF",
-	"collisionClassByFighter":"PROJECTILE_FIGHTER",	
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	"passThroughMissiles":true,
+	"passThroughFighters":true,
+	"passThroughFightersOnlyWhenDestroyed":true,
+	"applyOnHitEffectWhenPassThrough":true,
 	#"spawnType":"BALLISTIC_AS_BEAM",
 	#"collisionClass":"RAY",
 	#"collisionClassByFighter":"RAY_FIGHTER",
