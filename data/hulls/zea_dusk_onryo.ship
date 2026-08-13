@@ -163,7 +163,7 @@
       "width": 12.043166,
       "angle": 157.5,
       "contrailSize": 12.043166,
-      "style": "HIGH_TECH"
+      "style": "ZEA_DUSK_HTL"
     },
     {
       "location": [-62.5, -86.5],
@@ -171,7 +171,7 @@
       "width": 12.043166,
       "angle": -157.5,
       "contrailSize": 12.043166,
-      "style": "HIGH_TECH"
+      "style": "ZEA_DUSK_HTL"
     },
     {
       "location": [-68.5, 72.5],
@@ -179,7 +179,7 @@
       "width": 29.381201,
       "angle": 158.5,
       "contrailSize": 29.381201,
-      "style": "HIGH_TECH"
+      "style": "ZEA_DUSK_HTL"
     },
     {
       "location": [-68.5, -72.5],
@@ -187,7 +187,7 @@
       "width": 29.381201,
       "angle": -158.5,
       "contrailSize": 29.381201,
-      "style": "HIGH_TECH"
+      "style": "ZEA_DUSK_HTL"
     },
     {
       "location": [-81.5, 51.5],
@@ -195,7 +195,7 @@
       "width": 41.43866,
       "angle": 167.5,
       "contrailSize": 41.43866,
-      "style": "HIGH_TECH"
+      "style": "ZEA_DUSK_HTL"
     },
     {
       "location": [-81.5, -51.5],
@@ -203,7 +203,7 @@
       "width": 41.43866,
       "angle": -167.5,
       "contrailSize": 41.43866,
-      "style": "HIGH_TECH"
+      "style": "ZEA_DUSK_HTL"
     },
     {
       "location": [-64, 93.5],
@@ -211,7 +211,7 @@
       "width": 10.753597,
       "angle": 154.5,
       "contrailSize": 10.753597,
-      "style": "HIGH_TECH"
+      "style": "ZEA_DUSK_HTL"
     },
     {
       "location": [-64, -93.5],
@@ -219,7 +219,7 @@
       "width": 10.753597,
       "angle": -154.5,
       "contrailSize": 10.753597,
-      "style": "HIGH_TECH"
+      "style": "ZEA_DUSK_HTL"
     },
     {
       "location": [-114.5, -12],
@@ -227,7 +227,7 @@
       "width": 20,
       "angle": 180,
       "contrailSize": 20,
-      "style": "HIGH_TECH"
+      "style": "ZEA_DUSK_HTL"
     },
     {
       "location": [-113.5, 12],
@@ -235,7 +235,7 @@
       "width": 20,
       "angle": -180,
       "contrailSize": 20,
-      "style": "HIGH_TECH"
+      "style": "ZEA_DUSK_HTL"
     },
     {
       "location": [-119.5, -0],
@@ -243,7 +243,7 @@
       "width": 20,
       "angle": 180,
       "contrailSize": 20,
-      "style": "HIGH_TECH"
+      "style": "ZEA_DUSK_HTL"
     }
   ],
   "bounds": [

@@ -108,7 +108,7 @@
       "width": 35,
       "angle": 130,
       "contrailSize": 30.540001,
-      "style": "zea_nightfall"
+      "style": "ZEA_NIGHTFALL"
     },
     {
       "location": [10.5, -50.5],
@@ -116,7 +116,7 @@
       "width": 35,
       "angle": -130,
       "contrailSize": 30.540001,
-      "style": "zea_nightfall"
+      "style": "ZEA_NIGHTFALL"
     },
     {
       "location": [8, 53],
@@ -124,7 +124,7 @@
       "width": 12.111761,
       "angle": 130,
       "contrailSize": 12.111761,
-      "style": "zea_nightfall2"
+      "style": "ZEA_NIGHTFALL2"
     },
     {
       "location": [8, -53],
@@ -132,7 +132,7 @@
       "width": 12.111761,
       "angle": -130,
       "contrailSize": 12.111761,
-      "style": "zea_nightfall2"
+      "style": "ZEA_NIGHTFALL2"
     },
     {
       "location": [-6, 36],

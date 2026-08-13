@@ -12,7 +12,6 @@
   "shieldRadius": 92.5,
   "viewOffset": 0,
   "builtInMods": [
-    "high_maintenance",
     "delicate",
     "advancedshieldemitter",
     "zea_dusk_builtin",

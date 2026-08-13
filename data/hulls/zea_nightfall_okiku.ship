@@ -165,7 +165,7 @@
       "width": 45,
       "angle": 135,
       "contrailSize": 37.119999,
-      "style": "zea_nightfall"
+      "style": "ZEA_NIGHTFALL"
     },
     {
       "location": [22.5, -49],
@@ -173,7 +173,7 @@
       "width": 45,
       "angle": -135,
       "contrailSize": 37.119999,
-      "style": "zea_nightfall"
+      "style": "ZEA_NIGHTFALL"
     },
     {
       "location": [-25.5, -0],
@@ -181,7 +181,7 @@
       "width": 45,
       "angle": 180,
       "contrailSize": 28,
-      "style": "zea_nightfall"
+      "style": "ZEA_NIGHTFALL"
     },
     {
       "location": [20.5, -51],
@@ -189,7 +189,7 @@
       "width": 10,
       "angle": -135.5,
       "contrailSize": 14.62,
-      "style": "zea_nightfall2"
+      "style": "ZEA_NIGHTFALL2"
     },
     {
       "location": [20.5, 51],
@@ -197,7 +197,7 @@
       "width": 10,
       "angle": 135.5,
       "contrailSize": 14.62,
-      "style": "zea_nightfall2"
+      "style": "ZEA_NIGHTFALL2"
     },
     {
       "location": [-30.5, -0],
@@ -205,7 +205,7 @@
       "width": 10,
       "angle": 180,
       "contrailSize": 12,
-      "style": "zea_nightfall2"
+      "style": "ZEA_NIGHTFALL2"
     },
     {
       "location": [17.5, 117],
@@ -213,7 +213,7 @@
       "width": 7,
       "angle": 120,
       "contrailSize": 11.31,
-      "style": "zea_nightfall2"
+      "style": "ZEA_NIGHTFALL2"
     },
     {
       "location": [17.5, -117],
@@ -221,7 +221,7 @@
       "width": 7,
       "angle": -120,
       "contrailSize": 11.31,
-      "style": "zea_nightfall2"
+      "style": "ZEA_NIGHTFALL2"
     },
     {
       "location": [19.5, 113.5],
@@ -229,7 +229,7 @@
       "width": 20.53332,
       "angle": 120,
       "contrailSize": 20.53332,
-      "style": "zea_nightfall"
+      "style": "ZEA_NIGHTFALL"
     },
     {
       "location": [19.5, -113.5],
@@ -237,7 +237,7 @@
       "width": 20.53332,
       "angle": -120,
       "contrailSize": 20.53332,
-      "style": "zea_nightfall"
+      "style": "ZEA_NIGHTFALL"
     },
     {
       "location": [-10.5, 34],

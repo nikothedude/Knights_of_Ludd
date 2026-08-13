@@ -122,7 +122,7 @@ zea_mazuma_s,hardpoint,,0.5,normal,graphics/kol/maps/weapon_normals/kol_mazuma_s
 zea_mazuma_s,turret,,0.5,normal,graphics/kol/maps/weapon_normals/kol_mazuma_s_base_normal.png
 zea_mazuma_m,hardpoint,,0.5,normal,graphics/kol/maps/weapon_normals/kol_mazuma_m_base_normal.png
 zea_mazuma_m,turret,,0.5,normal,graphics/kol/maps/weapon_normals/kol_mazuma_m_base_normal.png
-zea_hosta_l,hardpoint,,0.5,normal,graphics/kol/maps/weapon_normals/kol_hosta_l_base_normal.png
+zea_hosta_l,hardpoint,,0.5,normal,graphics/kol/maps/weapon_normals/kol_hosta_l_hardpoint_normal.png
 zea_hosta_l,turret,,0.5,normal,graphics/kol/maps/weapon_normals/kol_hosta_l_base_normal.png
 zea_hosta_m,hardpoint,,0.5,normal,graphics/kol/maps/weapon_normals/kol_hosta_m_base_normal.png
 zea_hosta_m,turret,,0.5,normal,graphics/kol/maps/weapon_normals/kol_hosta_m_base_normal.png

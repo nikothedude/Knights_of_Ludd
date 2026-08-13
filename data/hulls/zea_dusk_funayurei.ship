@@ -107,7 +107,7 @@
       "location": [-87.5, 12.5],
       "length": 64,
       "width": 10,
-      "angle": -177.5,
+      "angle": 178.5,
       "contrailSize": 10,
       "style": "HIGH_TECH"
     },
@@ -115,7 +115,7 @@
       "location": [-87.5, -12.5],
       "length": 64,
       "width": 10,
-      "angle": 177.5,
+      "angle": -178.5,
       "contrailSize": 10,
       "style": "HIGH_TECH"
     },
@@ -139,7 +139,7 @@
       "location": [-86, 26],
       "length": 43.720314,
       "width": 8.193692,
-      "angle": -179,
+      "angle": 174.5,
       "contrailSize": 8,
       "style": "HIGH_TECH"
     },
@@ -147,7 +147,7 @@
       "location": [-86, -26],
       "length": 43.720314,
       "width": 8.193692,
-      "angle": 179,
+      "angle": -174.5,
       "contrailSize": 8,
       "style": "HIGH_TECH"
     }
