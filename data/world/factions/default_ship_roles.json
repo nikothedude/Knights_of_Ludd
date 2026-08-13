@@ -79,6 +79,7 @@
 		"zea_dawn_lushu_Withering":50,
 		"zea_dawn_xuangui_World":50,
 		"zea_dawn_xuangui_Skies":50,
+		"zea_boss_zhi_nu_Dancing":0,
 		"zea_dusk_shiryo_Fading":40,
 		"zea_dusk_shiryo_Lingering":40,
 		"zea_dusk_furaribi_Cacophanous":30,
@@ -105,6 +106,7 @@
 		"zea_edf_wani_Harasser":10,
 		"zea_edf_raiju_Shieldbreaker":6,
 		"zea_edf_raiju_Standoff":6,
+		"zea_boss_iaya_Ceaseless":0,
 	},
 	"combatSmallForSmallFleet":{
 		"kol_protea_Squire":1,
@@ -112,6 +114,7 @@
 		"kol_protea_Brawler":1,
 		"kol_sundew_Squire":0.5,
 		"kol_sundew_Onager":0.15,
+		"zea_boss_iaya_Ceaseless":0,
 		"zea_boss_ninaya_Nightdemon":0,
 		"zea_boss_ninaya_Gremlin":0,
 		"zea_dusk_ikiryo_Cry_Of_The":8,

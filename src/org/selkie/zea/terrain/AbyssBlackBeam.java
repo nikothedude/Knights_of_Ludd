@@ -30,7 +30,7 @@ public class AbyssBlackBeam extends AbyssPulsarBeamTerrainPlugin {
             name = "Lure of the Abyss";
             nameTooltip = "Lure of the Abyss";
             multiplyArc(0.65f);
-            flareTexture = Global.getSettings().getSprite(GfxCat.TERRAIN, "aurora");
+            flareTexture = Global.getSettings().getSprite(GfxCat.TERRAIN, "zea_pullsar_beam");
             //pulsarRotation = -1f * (10f + (float) Math.random() * 10f);
             pulsarRotation *= 8f;
             inited = true;

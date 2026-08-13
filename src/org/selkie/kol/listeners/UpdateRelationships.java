@@ -31,7 +31,11 @@ public class UpdateRelationships extends BaseCampaignEventListener {
 			return;
 		}
     	if (factionId.equals(Factions.LUDDIC_CHURCH)) {
-			Global.getSector().getFaction(KolStaticStrings.kolFactionID).adjustRelationship(Factions.PLAYER, delta);
+			FactionAPI knights = Global.getSector().getFaction(KolStaticStrings.kolFactionID);
+			float target = Global.getSector().getFaction(Factions.LUDDIC_CHURCH).getRelationship(Factions.PLAYER);
+			if (knights.getRelationship(Factions.PLAYER) != target) {
+				knights.setRelationship(Factions.PLAYER, target);
+			}
     		if (Misc.getCommissionFactionId() != null && Misc.getCommissionFactionId().equals(KolStaticStrings.kolFactionID)) {
     			if (Global.getSector().getFaction(Factions.LUDDIC_CHURCH).getRelToPlayer().getRepInt() <= -50) {
     				List<IntelInfoPlugin> intels =  Global.getSector().getIntelManager().getIntel(FactionCommissionIntel.class);
@@ -50,7 +54,11 @@ public class UpdateRelationships extends BaseCampaignEventListener {
             }
         }
 		if (factionId.equals(KolStaticStrings.kolFactionID)) {
-			Global.getSector().getFaction(Factions.LUDDIC_CHURCH).adjustRelationship(Factions.PLAYER, delta);
+			FactionAPI church = Global.getSector().getFaction(Factions.LUDDIC_CHURCH);
+			float target = Global.getSector().getFaction(KolStaticStrings.kolFactionID).getRelationship(Factions.PLAYER);
+			if (church.getRelationship(Factions.PLAYER) != target) {
+				church.setRelationship(Factions.PLAYER, target);
+			}
 			if (Misc.getCommissionFactionId() != null && Misc.getCommissionFactionId().equals(Factions.LUDDIC_CHURCH)) {
 				if (Global.getSector().getFaction(KolStaticStrings.kolFactionID).getRelToPlayer().getRepInt() <= -50) {
 					List<IntelInfoPlugin> intels =  Global.getSector().getIntelManager().getIntel(FactionCommissionIntel.class);
@@ -78,6 +86,7 @@ public class UpdateRelationships extends BaseCampaignEventListener {
 			FactionAPI church = Global.getSector().getFaction(Factions.LUDDIC_CHURCH);
 			FactionAPI knights = Global.getSector().getFaction(KolStaticStrings.kolFactionID);
 			for(FactionAPI faction:Global.getSector().getAllFactions()) {
+				if(faction.getId().equals(knights.getId())) continue;
 				knights.setRelationship(faction.getId(), church.getRelationship(faction.getId()));
 			}
 		}
