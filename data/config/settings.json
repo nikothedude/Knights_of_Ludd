@@ -351,7 +351,7 @@
 			"zea_flower_nebula_layer2":"graphics/zea/terrain/flower_nebula_layer2.png",
 			"zea_nebula_fingers":"graphics/zea/terrain/zea_nebula_fingers.png",
 			"zea_nebula_locus":"graphics/zea/terrain/zea_nebula_locus.png",
-			"zea_pullsar_beam":"graphics/planets/aurorae.png",
+			"zea_pullsar_beam":"graphics/zea/terrain/zea_dusk_pullsar.png",
 		},
 		"characters":{
 			"kol_grandmaster":"graphics/kol/portraits/kol_grandmaster.png",
